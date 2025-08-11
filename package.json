@@ -1,14 +1,11 @@
 {
-  "name": "test",
+  "name": "s5",
   "version": "1.0.0",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Aydin",
+  "author": "AZ",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "express": "^5.1.0"
-  }
+  "description": ""
 }
