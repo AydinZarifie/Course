@@ -1,13 +1,27 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const server = http.createServer();
+//تعریف میدلویر
+app.use(express.json());
 
-server.on('request' , (request ,response) => {
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify([{message : "Hello world!"} , {name : "AZ"}]))
+app.get("/test" , (request , response) => {
+    response.status(200).send("Hello World");
 });
 
-server.listen(3000 , () => {
-    console.log("Server is runing on port 3000!");
+app.post("/login" , (request , response) => {    
+
+    console.log(request.body);
+    
+    const username = request.body.username;
+    const password = request.body.password;
+
+    console.log(username);
+    console.log(password);
+     
+
+    response.status(200).send("Data is receive")
 })
+
+app.listen(3000 , () => {
+    console.log("Server is runing on port 3000!");
+});
